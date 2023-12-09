@@ -71,16 +71,30 @@
     3. 원하는 유저의 평가 항목 검색
     ```python
         # 원하는 유저의 평가 항목 검색
-        # 숫자 부분에 원하는 유저의 아이디를 설정하면 된다
-        print(df[df['User-ID']==11400])
+        # 아이디 입력를 하면 된다
+        print('유저 리스트 입니다 다른 항목을 보려면 아무키나 누르세요 멈추 시려면 y를 누르세요')
+        ma='a'
+        while(ma!='y'):
+            s=random.randint(1,len(df['User-ID']))
+            print(df['User-ID'][s:s+10,])
+            ma=input()
+
+        id_1=input('원하는 유저의 아이디를 입력하세요: ')
+        isbn=df.loc[df['User-ID']==int(id_1),'ISBN']
+        ti=df.loc[df['User-ID']==int(id_1),'Book-Title']
+        print('\n해당 유저가 평가한 책들의 ISBN과 제목입니다\n')
+        print(isbn, ti)
+        ISBN=input('평가를 원하시는 책의 isbn을 입력해주세요:')
+        
     ```
 
-    4. 값 예측 및
+    4. 값 예측
     ``` python
         # 출력된 리스트 중에서 예상 점수를 확인하고자 하는 책의 ISBN 선택 후 문자열로 삽입
-        svd.predict(11400,'0786868716')    
+        print(f'평가 점수: {svd.predict(int(id_1),ISBN).est:.2f}')   
     ```
-    원 점수 9점, 머신러닝 모델에 따른 평가 점수는 8점이 나왔다
+    평가를 원하시는 책의 isbn을 입력해주세요:0380820447
+    평가 점수: 7.99
 
 3. cosine 유사도를 이용한 책 추천 프로그램
     1. 추가적인 데이터 전처리 과정
