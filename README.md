@@ -191,3 +191,7 @@
 
 
 
+reference
+- <https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset/data>
+- <https://www.kaggle.com/code/scratchpad/notebook4060d37743/edit>
+- <https://www.kaggle.com/code/hilalmleykeyuksel/book-recommender/notebook>
