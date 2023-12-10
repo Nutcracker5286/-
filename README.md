@@ -87,6 +87,38 @@
         ISBN=input('평가를 원하시는 책의 isbn을 입력해주세요:')
         
     ```
+        유저 리스트 입니다 다른 항목을 보려면 아무키나 누르세요 멈추 시려면 y를 누르세요
+        190268    227250
+        190269    227250
+        190270    227250
+        190271    227250
+        190272    227250
+        190273    227250
+        190274    227250
+        190275    227250
+        190276    227250
+        190277    227250
+        Name: User-ID, dtype: int64
+        227250
+        264764    232528
+        264765    232528
+        264766    232528
+        264767    166878
+        264768    190758
+        264769    235507
+        264770    252802
+        264771    190787
+        264772    200527
+        264773     61749
+        Name: User-ID, dtype: int64
+        y
+        원하는 유저의 아이디를 입력하세요: 232528
+
+        해당 유저가 평가한 책들의 ISBN과 제목입니다
+
+        264764    8401462231
+        264765    8459912019
+        264766    8401499895
 
     4. 값 예측
     ``` python
@@ -144,8 +176,34 @@
             
                 return recommend_books[0:5]
     ```
+    3. 원하는 유저의 평가 항목 검색
+    ```python
+        # 원하는 유저의 평가 항목 검색
+        # 아이디 입력를 하면 된다
+        print('유저 리스트 입니다 다른 항목을 보려면 아무키나 누르세요 멈추 시려면 y를 누르세요')
+        ma='a'
+        while(ma!='y'):
+            s=random.randint(1,len(df['User-ID']))
+            print(df['User-ID'][s:s+10,])
+            ma=input()
 
-    3. 선호 하는 책과 그와 유사한 책들을 추천하고 이미지 링크 제공
+        idxa=input('원하는 유저의 아이디를 입력하세요: ')
+    ```
+            유저 리스트 입니다 다른 항목을 보려면 아무키나 누르세요 멈추 시려면 y를 누르세요
+            167839    44190
+            167840    44190
+            167841    44190
+            167842    44190
+            167843    44190
+            167844    44190
+            167845    44190
+            167846    44190
+            167847    44190
+            167848    44190
+            Name: User-ID, dtype: int64
+            y
+            원하는 유저의 아이디를 입력하세요: 31556
+    4. 선호 하는 책과 그와 유사한 책들을 추천하고 이미지 링크 제공
     ```python
             user_id=l[idxa]
             user_choice_df=pd.DataFrame(users_choice(user_id))
@@ -164,46 +222,44 @@
                 print(f'표지: {b_url}\n')
     ```
     4. 출력 결과
-    USER: 23872 
+            USER: 31556 
 
-    랜덤 선택된 유저가 선호하는 책
+            선택된 유저가 선호하는 책
 
-    제목 The Scarlet Letter  
-    표지: http://images.amazon.com/images/P/0553210092.01.LZZZZZZZ.jpg
+            제목 To Kill a Mockingbird
+            표지: http://images.amazon.com/images/P/0446310786.01.LZZZZZZZ.jpg
 
-    제목 Elvis Lives And Other Anagrams  
-    표지: http://images.amazon.com/images/P/0374321272.01.LZZZZZZZ.jpg
+            제목 My Evil Twin An Avon Camelot Book
+            표지: http://images.amazon.com/images/P/0380790823.01.LZZZZZZZ.jpg
 
-    제목 Harry Potter Collector s Value Guide  
-    표지: http://images.amazon.com/images/P/1585980730.01.LZZZZZZZ.jpg
+            제목 A Wrinkle in Time
+            표지: http://images.amazon.com/images/P/0440998050.01.LZZZZZZZ.jpg
 
-    제목 Persephone and the Pomegranate A Myth from Greece  
-    표지: http://images.amazon.com/images/P/0803711921.01.LZZZZZZZ.jpg
+            제목 Endurance Shackleton s Incredible Voyage
+            표지: http://images.amazon.com/images/P/078670621X.01.LZZZZZZZ.jpg
 
-    제목 Rapunzel Caldecott Medal Book  
-    표지: http://images.amazon.com/images/P/0525456074.01.LZZZZZZZ.jpg
-
-
+            제목 We Live in Ireland Living Here
+            표지: http://images.amazon.com/images/P/0531180700.01.LZZZZZZZ.jpg
 
 
-    선호도 기반한 추천 책
-
-    제목 Of Mice and Men Penguin Great Books of the 20th Century  
-    표지: http://images.amazon.com/images/P/0140177396.01.LZZZZZZZ.jpg
-
-    제목 Looking for Rachel Wallace  
-    표지: http://images.amazon.com/images/P/0440153166.01.LZZZZZZZ.jpg
-
-    제목 A Brief History of Time From the Big Bang to the Black Holes  
-    표지: http://images.amazon.com/images/P/1574534467.01.LZZZZZZZ.jpg
-
-    제목 Tale of Two Cities Bantam Classic  
-    표지: http://images.amazon.com/images/P/0553211765.01.LZZZZZZZ.jpg
-
-    제목 The War of the Worlds Bantam Classics  
-    표지: http://images.amazon.com/images/P/0553213385.01.LZZZZZZZ.jpg
 
 
+            선호도 기반한 추천 책
+
+            제목 Yukon Ho
+            표지: http://images.amazon.com/images/P/0836218353.01.LZZZZZZZ.jpg
+
+            제목 The Velveteen Rabbit
+            표지: http://images.amazon.com/images/P/0380002558.01.LZZZZZZZ.jpg
+
+            제목 Gulliver s Travels Dover Thrift Editions
+            표지: http://images.amazon.com/images/P/0486292738.01.LZZZZZZZ.jpg
+
+            제목 Cloudy With a Chance of Meatballs
+            표지: http://images.amazon.com/images/P/0689707495.01.LZZZZZZZ.jpg
+
+            제목 The Return of the Native
+            표지: http://images.amazon.com/images/P/0451524713.01.LZZZZZZZ.jpg
 
 reference
 - <https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset/data>
